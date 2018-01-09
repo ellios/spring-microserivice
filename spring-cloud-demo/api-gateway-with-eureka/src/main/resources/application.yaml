@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 9201
+
+management:
+  security:
+    enabled: false
+
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-consumer
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
